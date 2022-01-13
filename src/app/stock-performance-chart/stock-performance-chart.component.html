@@ -1,6 +1,0 @@
-<div class="chart-input">
-  <form [formGroup]="stockInfoForm" (ngSubmit)="search()">
-    <label for="ticker">Stock Symbol</label>
-    <input id="ticker" type="text" formControlName="ticker">
-    <button type="submit" [disabled]="!stockInfoForm.valid">Get Past Performance</button>
-  </form>

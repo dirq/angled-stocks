@@ -1,0 +1,18 @@
+<p>stock-search works!</p>
+<div class="stock-search">
+  <form [formGroup]="searchForm" (ngSubmit)="search()">
+    <label for="ticker">Stock Symbol</label>
+    <input id="ticker" type="text" formControlName="ticker">
+    <button type="submit" [disabled]="!searchForm.valid">Get Past Performance</button>
+  </form>
+</div>
+<div *ngIf="loading" style="text-align: center;">
+  Loading
+</div>
+
+<div *ngIf="!loading && results && results.length > 0">
+  <h2>Closing prices for the last 90 days</h2>
+  <ul class="stock-results" *ngFor="let result of results">
+    <li>{{result.date}} - <b>${{result.closePrice}}</b></li>
+  </ul>
+</div>
