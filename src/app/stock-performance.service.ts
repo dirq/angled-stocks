@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { restClient } from "@polygon.io/client-js";
+import { restClient } from '@polygon.io/client-js';
 import { environment } from '../environments/environment';
 
 const rest = restClient(environment.polygonApiKey);
@@ -11,7 +11,7 @@ export class StockPerformanceService {
   constructor() {}
 
   //polygon.io likes YYYY-MM-DD
-  formatDate(date: Date){
+  formatDate(date: Date) {
     return date.toISOString().split('T')[0];
   }
 
@@ -21,6 +21,12 @@ export class StockPerformanceService {
     const from = new Date(to);
     from.setDate(to.getDate() - 90);
 
-    return rest.stocks.aggregates(ticker, 1, 'day', this.formatDate(from), this.formatDate(to) )
+    return rest.stocks.aggregates(
+      ticker,
+      1,
+      'day',
+      this.formatDate(from),
+      this.formatDate(to)
+    );
   }
 }
