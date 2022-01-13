@@ -1,7 +1,9 @@
 <div class="stock-search">
   <form [formGroup]="searchForm" (ngSubmit)="search()">
-    <label for="ticker">Stock Symbol</label>
-    <input id="ticker" type="text" formControlName="ticker">
+    <div class="row">
+      <label for="ticker">Stock Symbol</label>
+      <input id="ticker" type="text" formControlName="ticker">
+    </div>
     <button type="submit" [disabled]="!searchForm.valid">Get Past Performance</button>
   </form>
 </div>
