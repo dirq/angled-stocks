@@ -1,4 +1,3 @@
-<p>stock-search works!</p>
 <div class="stock-search">
   <form [formGroup]="searchForm" (ngSubmit)="search()">
     <label for="ticker">Stock Symbol</label>
@@ -6,7 +5,8 @@
     <button type="submit" [disabled]="!searchForm.valid">Get Past Performance</button>
   </form>
 </div>
-<div *ngIf="loading" style="text-align: center;">
+
+<div *ngIf="loading" class="loader" style="text-align: center;">
   Loading
 </div>
 

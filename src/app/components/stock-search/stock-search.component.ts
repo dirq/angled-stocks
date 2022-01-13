@@ -33,32 +33,39 @@ export class StockSearchComponent implements OnInit {
 
   search() {
     this.loading = true;
-    console.log(this.searchForm.value);
-    this.performanceService
-      .getPastPerformance(this.searchForm.value.ticker)
-      .subscribe((x) => {
-        if (!x.results) {
-          this.results = [];
-          return;
-        }
 
-        this.results = x.results.map((y) => {
-          const date = new Date(y.t);
-          date.setDate(date.getDate() + 1);
+    let symbol = this.searchForm.value.ticker.trim().toUpperCase();
 
-          return {
-            date: date.toLocaleDateString('en-US', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            }),
-            openPrice: y.o,
-            closePrice: y.c,
-          };
-        });
+    if (symbol.length == 0) {
+      alert('enter a ticker symbol first');
+      this.loading = false;
+      return;
+    }
 
+    this.performanceService.getPastPerformance(symbol).subscribe((x) => {
+      if (!x.results) {
+        this.results = [];
         this.loading = false;
+        return;
+      }
+
+      this.results = x.results.map((y) => {
+        const date = new Date(y.t);
+        date.setDate(date.getDate() + 1);
+
+        return {
+          date: date.toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          }),
+          openPrice: y.o,
+          closePrice: y.c,
+        };
       });
+
+      this.loading = false;
+    });
   }
 }

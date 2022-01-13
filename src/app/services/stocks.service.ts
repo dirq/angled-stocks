@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-// import { polygonClient } from '@polygon.io/client-js';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,7 +7,7 @@ export interface IStockResult {
   queryCount: number;
   resultsCount: number;
   adjusted: boolean;
-  results?: (IPerformanceRecord)[] | null;
+  results?: IPerformanceRecord[] | null;
   status: string;
   request_id: string;
   count: number;
@@ -24,12 +23,10 @@ export interface IPerformanceRecord {
   n: number;
 }
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class StocksService {
-
   //private rest = restClient(environment.polygonApiKey);
 
   constructor(private http: HttpClient) {}
@@ -52,19 +49,7 @@ export class StocksService {
     ticker = ticker.toUpperCase().trim();
 
     const url = `https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/${fromQuery}/${toQuery}?apiKey=${environment.polygonApiKey}`;
-    console.log(url); //, ticker, from, to, environment.polygonApiKey);
 
     return this.http.get<IStockResult>(url);
-
-    //return 'past performance';
-
-    // const rest = restClient(environment.polygonApiKey);
-    //   return rest.stocks.aggregates(
-    //     ticker,
-    //     1,
-    //     'day',
-    //     this.formatDate(from),
-    //     this.formatDate(to)
-    //   );
   }
 }

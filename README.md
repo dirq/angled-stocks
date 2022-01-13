@@ -10,7 +10,7 @@ This is a __very__ quick example of an Angular app that pulls some basic histori
 - Performance optimizations (treeshaking unneeded JS/CSS)
 - SEO stuff
 - ADA/WCAG Accessibility Compliance
-- Environment variables
+- Environment variables (api keys in git pipeline variables probably)
 - GIT pipelines to test and deploy 
 - Organize the code into folders and whatnot
 - Testing would probably be good too
