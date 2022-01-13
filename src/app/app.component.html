@@ -36,7 +36,7 @@
     background-color: #333;
     color: #FFF;
     font-weight: 600;
-    padding-left: 100px;
+    padding: 5px 30px 5px 100px;
   }
 
   .toolbar .logo {
@@ -46,21 +46,6 @@
     position: absolute;
     top: 0;
     left: -10px;
-  }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-  }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
-    opacity: 0.8;
   }
 
   .content {
@@ -85,9 +70,16 @@
 
   footer {
     margin-top: 8px;
-    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #FFF;
+
     align-items: center;
     line-height: 20px;
+    text-align: center;
   }
 
   footer a {
@@ -98,7 +90,7 @@
   .social-icon {
     width: 30px;
     height: 30px;
-    margin: 5px 30px;
+    margin-left: 15px;
     fill: #FFF
   }
 
@@ -123,18 +115,29 @@
     </svg>
     </a>
 
+
+  <a aria-label="Source code on Github" target="_blank" rel="noopener" href="https://github.com/dirq/angled-stocks" title="Source Code on Github">
+      <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 16 16" >
+        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      </a>
+
+
 </div>
 
 <div class="content" role="main">
 
   <stock-search></stock-search>
 
-  <!-- Footer -->
-  <footer>
-
-  </footer>
-
 </div>
+
+<footer>
+  <a target="_blank" rel="noopener" href="https://github.com/dirq/angled-stocks">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="48" height="48"
+viewBox="0 0 48 48"><path fill="#F4511E" d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"></path></svg>
+    Source code on Github</a>
+</footer>
 
 
 <router-outlet></router-outlet>
