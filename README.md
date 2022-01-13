@@ -1,6 +1,6 @@
 # Dirk's little stock ticker
 
-This is a __very__ quick example of an Angular app that pulls some basic historical data for a stock ticker.  Doing a quick search let me to Polygon.io for a free API call.  And much to my surprise, they had a NPM package too (through it's pretty basic).  
+This is a __very__ quick example of an Angular app that pulls some basic historical data for a stock ticker.  Using Polygon.io for a free API call.  Built in VS Code on Windows.
 
 ## Things I would add
 
