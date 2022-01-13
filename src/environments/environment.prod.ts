@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  polygonApiKey: 'NSpsc1JeXLWvYO7FLifCfksHf_50lBw8',
 };
